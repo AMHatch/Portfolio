@@ -45,6 +45,17 @@ Version: 1.0
 .icon-size{
   font-size: 50px;
 }
+.grayscale{
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: all 0.45s ease;
+}
+/* img.grayscale:hover{
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  filter: grayscale(0%);
+} */
 .rinput{
   color: #666970;
 }
