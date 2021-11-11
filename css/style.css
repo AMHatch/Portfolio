@@ -45,6 +45,9 @@ Version: 1.0
 .icon-size{
   font-size: 50px;
 }
+.rinput{
+  color: #666970;
+}
 
 html {
   overflow-x: hidden;
