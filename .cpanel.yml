@@ -2,7 +2,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/amhajneb/repositories/Portfolio
+    - export DEPLOYPATH=/home/amhajneb/public_html
     /bin/cp -R img $DEPLOYPATH
     /bin/cp -R css $DEPLOYPATH
     /bin/cp -R fonts $DEPLOYPATH
