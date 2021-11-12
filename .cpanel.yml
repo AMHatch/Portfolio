@@ -2,7 +2,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/amhajneb/public_html/
-    /bin/cp -r * $DEPLOYPATH
+    - export DEPLOYPATH=/home/amhajneb/public_html
+    - /bin/cp -r * $DEPLOYPATH
     
     
