@@ -3,13 +3,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/amhajneb/public_html
-    /bin/cp -R img/* $DEPLOYPATH
-    /bin/cp -R css/* $DEPLOYPATH
-    /bin/cp -R fonts/* $DEPLOYPATH
-    /bin/cp -R js/* $DEPLOYPATH
-    /bin/cp -R php/* $DEPLOYPATH
-    /bin/cp index.html $DEPLOYPATH
-    /bin/cp about.html $DEPLOYPATH
-    /bin/cp contact.html $DEPLOYPATH
-    /bin/cp portfolio.html $DEPLOYPATH
+    /bin/cp -r * $DEPLOYPATH
+    
     
