@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 if (isset($_REQUEST['name'],$_REQUEST['email'])) {
       
     $name = $_REQUEST['name'];
@@ -16,4 +16,4 @@ if (isset($_REQUEST['name'],$_REQUEST['email'])) {
     echo ($send_email) ? 'success' : 'error';
 
 }
-?>
+?> -->
