@@ -23,6 +23,27 @@
 
     <!-- Modernizr JS File -->
     <script src="js/modernizr.custom.js"></script>
+
+    <!-- <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                const serviceID = 'service_x5pxb33';
+                const templateID = 'contact_form_hatch';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        alert('Message Successfully Sent!');
+                    }, (err) => {
+                        alert(JSON.stringify(err));
+                        });
+                        });
+        }
+    </script> -->
+    
 </head>
 
 <body class="contact">
@@ -88,14 +109,7 @@
             <div class="col-12 col-lg-4">
                 <h3 class="text-uppercase custom-title mb-0 ft-wt-600 pb-3">Don't be shy !</h3>
                 <p class="open-sans-font mb-3">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities. Additional contact information is on my resume.</p>
-                <!-- <p class="open-sans-font custom-span-contact position-relative">
-                    <i class="fa fa-envelope-open position-absolute"></i>
-                    <span class="d-block">email me!</span>
-                </p> -->
-                <!-- <p class="open-sans-font custom-span-contact position-relative">
-                    <i class="fa fa-phone-square position-absolute"></i>
-                    <span class="d-block">call me</span> (470)
-                </p> -->
+
                 <ul class="social list-unstyled pt-1 mb-5">
                     <li class="linkdin"><a title="Linkdin" href="https://www.linkedin.com/in/amhatch/" target="_blank"><i class="fa fa-linkedin"></i></a>
                     </li>
@@ -106,56 +120,37 @@
             </div>
             <!-- Left Side Ends -->
             <!-- Contact Form Starts -->
-            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/integration
-            emailjs.init('user_PPI01qjNOO0WDAwx9sFiU');
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'contact_form', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
             <div class="col-12 col-lg-8">
-                <form class="contactform" vid="contact-form"  >
+
+                <form class="contactform" id="contact-form" >
                     <div class="contactform">
                         <div class="row">
                             <div class="col-12 col-md-4">
-                                <input type="hidden" name="contact_number">
-                                <input type="text" name="user_name" placeholder="YOUR NAME" required>
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <input type="email" name="user_email" placeholder="YOUR EMAIL" required>
-                            </div>
-                            <!-- <div class="col-12 col-md-4">
-                                <input type="text" name="subject" placeholder=" SUBJECT" required>
-                            </div> -->
-                            
-                            <div class="col-12">
-                                <textarea name="message" placeholder="YOUR MESSAGE" required></textarea>
-                                <div class="col-12 text-right mb-3 rinput"> all inputs required</div>
-                                <button type="submit" class="button">
-                                    <span class="button-text">Send Message</span>
-                                    <span class="button-icon"> <i class="fa fa-send"></i> </span>
-                                </button>
-                            </div>
-                            
-                            <div class="col-12 form-message">
-                                <span class="output_message text-center font-weight-600 text-uppercase"></span>
-                            </div>
+            <form id="contact-form">
+            
+                <input type="hidden" name="contact_number">
+                
+                <input type="text" name="user_name" placeholder="YOUR NAME" required>
+            </div>
+            <div class="col-12 col-md-4">
+                
+                <input type="email" name="user_email" placeholder="YOUR EMAIL" required>
+            </div>
+            <div class="col-12"></div>
+                
+                <textarea name="message" placeholder="YOUR MESSAGE" required></textarea>
+                <div class="col-12 text-right mb-3 rinput"> all inputs required</div>
+
+                
+                <button type="submit" class="button">
+                    <span class="button-text">Send Message</span>
+                    <span class="button-icon"> <i class="fa fa-send"></i> </span>
+                </button>
+            </form>
+            
+            
+        </div>
+
                         </div>
                     </div>
                 </form>
@@ -178,6 +173,37 @@
 <script src="js/bootstrap.js"></script>
 <script src="js/custom.js"></script>
 <script src="https://kit.fontawesome.com/b5578a43de.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<!-- <script type="text/javascript">
+    (function() {
+        emailjs.init('user_PPI01qjNOO0WDAwx9sFiU');
+    })();
+</script> -->
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('user_PPI01qjNOO0WDAwx9sFiU');
+        })();
+    
+        
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        this.contact_number.value = Math.random() * 100000 | 0;
+
+        const serviceID = 'service_x5pxb33';
+        const templateID = 'contact_form_hatch';
+
+        emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            alert('Message Successfully Sent!');
+        }, (err) => {
+            alert(JSON.stringify(err));
+            });
+        });
+    </script>
+
+
+
 
 </body>
 
